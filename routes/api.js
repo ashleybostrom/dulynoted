@@ -2,10 +2,10 @@
 
 const express = require('express');
 
-const notesRoute = require('./htmlRoutes');
+const notesRoute = require('./notes');
 
 const app = express();
 
-app.use('/htmlRoutes', notesRoute);
+app.use('./notes', notesRoute);
 
 module.exports = app;

@@ -1,8 +1,8 @@
 // Dependencies
 const express = require("express");
 const path = require('path');
-const api = require('./routes/apiRoutes');
-const notes = require('./routes/htmlRoutes');
+const api = require('./routes/api');
+const notes = require('./routes/notes');
 const PORT = process.env.PORT || 3001;
 
 // Express app
