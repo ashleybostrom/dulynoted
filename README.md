@@ -33,8 +33,9 @@ In your terminal, type `node server.js`
 Now you are ready to create, save, and delete notes from your application!
 
 ## Mock-Up
-
+![Home Screen](./public/assets/dulynotedhome.png)
+![Notes Screen](./public/assets/notesshot.png)
 
 ## Links
-GitHub Repo
-Heroku Deployed App
+[Heroku](https://young-sierra-64736.herokuapp.com/)
+[GitHub](https://ashleybostrom.github.io/dulynoted/)
