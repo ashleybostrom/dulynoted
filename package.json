@@ -1,16 +1,26 @@
 {
-    "name": "note-taker",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js",
-        "build": "webpack"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.18.2"
-    }
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "This CLI App has been created to generate an application that will write and save notes in order to maximize time management, focus, and energy. This application uses Node.js && Express.js to save and retrieve the note data from a JSON file.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashleybostrom/noted.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ashleybostrom/noted/issues"
+  },
+  "homepage": "https://github.com/ashleybostrom/noted#readme"
 }
