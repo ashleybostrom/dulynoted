@@ -1,6 +1,6 @@
 const notes = require('express').Router();
-const { readFromFile, readAndAppend, readAndRemove, getUniqueUuid } = require('../assets/js/utils');
-const uuid = require('../assets/js/uuid');
+const { readFromFile, readAndAppend, readAndRemove, getUniqueUuid } = require('../public/assets/js/utils');
+const uuid = require('../public/assets/js/uuid');
 
 const noteFile = './db/db.json';
 
