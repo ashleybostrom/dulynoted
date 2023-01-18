@@ -1,4 +1,4 @@
-# noted
+# dulynoted
 This CLI App has been created to generate an application that will write and save notes in order to maximize time management, focus, and energy. This application uses Node.js && Express.js to save and retrieve the note data from a JSON file. 
 
 
