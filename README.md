@@ -37,5 +37,5 @@ Now you are ready to create, save, and delete notes from your application!
 ![Notes Screen](./public/assets/notesshot.png)
 
 ## Links
-[Heroku](https://young-sierra-64736.herokuapp.com/)
-[GitHub](https://ashleybostrom.github.io/dulynoted/)
+1. [Heroku](https://young-sierra-64736.herokuapp.com/)
+1. [GitHub](https://ashleybostrom.github.io/dulynoted/)
