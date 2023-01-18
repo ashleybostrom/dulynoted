@@ -75,7 +75,7 @@ const handleNoteSave = () => {
 
 // Delete note
 const handleNoteDelete = (e) => {
-  // prevents the click listener when inside the delete button
+  // prevents the click listener when the delete button is clicked
   e.stopPropagation();
 
   const note = e.target;
