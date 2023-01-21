@@ -1,30 +1,17 @@
-const notes = require('express').Router();
-const { readFromFile, readAndAppend, readAndRemove, getUniqueUuid } = require('../public/assets/js/utils');
-const uuid = require('../public/assets/js/uuid');
+const path = require('path');
 
-const noteFile = './db/db.json';
+module.exports = (app) => {
 
-notes.route('/')
-    .get((req, res) => {
-        readFromFile(noteFile).then((data) => res.json(JSON.parse(data)));
-    })
-    .post((req, res) => {
-        if (req.body) {
-            const { title, text } = req.body;
-            const newNote = {
-                title,
-                text,
-                id: getUniqueUuid(noteFile)
-            };
-            readAndAppend(newNote, noteFile);
-            res.json(newNote);
-        }
-    });
+    // GET /notes should return the notes.html file.
+    app.get('/notes', (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/notes.html'));
+    }
+    );
 
-notes.route('/:id')
-    .delete((req, res) => {
-        readAndRemove(req.params.id, noteFile);
-        res.json('deleted');
-    })
+    // GET * should return the index.html file.
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/index.html'));
+    }
+    );
 
-module.exports = notes;
+};
