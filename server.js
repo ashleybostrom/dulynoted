@@ -1,8 +1,7 @@
 // Dependencies
 const express = require("express");
+const fs = require("fs");
 const path = require('path');
-const api = require('./routes/api');
-const notes = require('./routes/notes');
 const PORT = process.env.PORT || 3001;
 
 // Express app
@@ -13,20 +12,14 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-app.use('/api', api);
 
 // Routes
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'))
-});
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index.html'))
-});
+require('./routes/api')(app);
+require('./routes/notes')(app);
 
 
 
 // Listener
-app.listen(PORT, () => {
+app.listen(PORT, function () {
     console.log(`App listening on PORT: ${PORT}`);
 });

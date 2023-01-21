@@ -1,4 +1,4 @@
-//Requiring express and routes from htmlRoutes
+//Requiring express and routes from notes
 
 const express = require('express');
 
