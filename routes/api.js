@@ -1,11 +1,38 @@
-//Requiring express and routes from notes
+//Import
+const fs= require('fs');
+const path = require('path');
+const uuid = require('uuid');
+let noteList = require('../db/db.json');
 
-const express = require('express');
+//Routing
+module.exports = (app) => {
 
-const notesRoute = require('./notes');
+    app.post('/api/notes', (req, res) => {
+        
+        let newNote = req.body;
+        console.log(req.body);
+        newNote.id = uuid.v4();
+        noteList.push(newNote);
+        res.json(true);
+        updateData();
+        console.log("New note added!")
+    });
 
-const app = express();
+    app.get('/api/notes', function (req, res) {
+        console.log("Note list sent!")
+        res.json(noteList);
+    });
 
-app.use('./notes', notesRoute);
+    app.delete('/api/notes/:id', function (req, res) {
+        noteList = noteList.filter(({ id }) => id !== req.params.id);
+        updateData();
+        res.json(noteList);
 
-module.exports = app;
+    });
+
+    function updateData() {
+        fs.writeFileSync("./db/db.json", JSON.stringify(noteList), function (err) {
+            if (err) throw err;
+            });
+    }
+};
